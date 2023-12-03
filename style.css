@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css2?family=Comfortaa&family=Nunito);
+
+
+:root {
+    --header_bgc: #607d8b;
+    --main_bgc: white;
+    --footer_bg: #607d8b;
+    --x_color: #3498db;
+    --o_color: orange;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comfortaa', 'Nunito', 'monospace', sans-serif;
+}
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 80px 1fr 60px;
+    background-color: whitesmoke;
+}
+
+.header {
+    background-color: var(--header_bgc);
+    color: white;
+}
+
+.main {
+    width: 900px;
+    min-height: 500px;
+    place-self: center;
+    display: grid;
+    grid-template: 80px 1fr 20px / 1fr 2fr;
+    column-gap: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--main_bgc);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1),
+                -4px -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    background-color: var(--footer_bg);
+    color: white;
+}
+
+.game-ui {
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.game-message {
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+    font-size: 2rem;
+}
+
+.game-board {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 2px;
+    background-color: lightslategray ;
+}
+
+.cell {
+    font-size: 5rem;
+    text-align: center;
+    padding: 20px 0;
+    background-color: white;
+    font-weight: bolder;
+}
+
+.x {
+    color: var(--x_color);
+}
+
+.o {
+    color: var(--o_color);
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    margin-right: 4px;
+    margin-top: 4px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2ecc71;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+button:active {
+    transition: 0.2s;
+    transform: scale(0.9);
+}
