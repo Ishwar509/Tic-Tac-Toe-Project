@@ -5,8 +5,8 @@
     --header_bgc: #607d8b;
     --main_bgc: white;
     --footer_bg: #607d8b;
-    --x_color: #3498db;
-    --o_color: orange;
+    --X_color: #3498db;
+    --O_color: orange;
 }
 
 
@@ -31,7 +31,7 @@
 
 .main {
     width: 900px;
-    min-height: 500px;
+    min-height: 540px;
     place-self: center;
     display: grid;
     grid-template: 80px 1fr 20px / 1fr 2fr;
@@ -67,27 +67,28 @@
 .game-board {
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    gap: 2px;
-    background-color: lightslategray ;
+    gap: 4px;
+    background-color: black;
 }
 
 .cell {
     font-size: 5rem;
     text-align: center;
-    padding: 20px 0;
+    padding: 24px 10px;
     background-color: white;
     font-weight: bolder;
+    color: var(--X_color);
 }
 
-.x {
-    color: var(--x_color);
+.X {
+    color: var(--X_color);
 }
 
-.o {
-    color: var(--o_color);
+.O {
+    color: var(--O_color);
 }
 
-button {
+.btn {
     width: 100px;
     height: 50px;
     margin-right: 4px;
@@ -98,6 +99,23 @@ button {
     color: white;
     font-size: 1rem;
     font-weight: bold;
+}
+
+.btn.mode {
+    width: 80px;
+    height: 50px;
+}
+
+.btn.selected {
+    background-color: salmon;
+}
+
+.cell:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+button:hover{
+    border: 3px solid black;
 }
 
 button:active {

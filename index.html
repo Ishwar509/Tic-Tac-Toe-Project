@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <script type="module" src="app.js" defer></script> -->
+    <script type="module" src="app.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -14,22 +14,20 @@
         </div>
         <div class="main">
             <div class="game-ui">
-                <button>Play</button>
+                <button class="btn play">PLAY</button>
                 <div>
                     <p>Choose Symbol</p>
-                    <button>X</button>
-                    <button>O</button>
+                    <button class="btn symbol selected">X</button>
+                    <button class="btn symbol">O</button>
                 </div>
                 <div>
                     <p>Choose Mode</p>
-                    <button>Easy</button>
-                    <button>Hard</button>
+                    <button class="btn mode easy selected">Easy</button>
+                    <button class="btn mode medium">Medium</button>
+                    <button class="btn mode hard">Hard</button>
                 </div>
             </div>
-            <div class="game-message">Message</div>
-            <div class="game-board">
-                
-            </div>
+            <div class="game-message"></div>
         </div>
         <div class="footer">
             <p>Created by Anonymous</p>

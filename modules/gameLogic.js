@@ -1,19 +1,20 @@
 
 function isMoveValid(board, cell){
-    return board[cell[0]][cell[1]] === null;
+    return (board[cell[0]][cell[1]] === null);
 }
 
-function checkWinCondition(board, cell, value){
+function checkWinCondition(board, value){
     const length = board.length;
-    return (getRowCount(board, cell, value) === length
-            || getColumnCount(board, cell, value) === length
-            || getRightDiagonalCount(board, value) === length
-            || getLeftDiagonalCount(board, value) === length);
+    return (   checkRows(board, value)
+            || checkColumns(board, value)
+            || checkLeftDiagonal(board, value)
+            || checkRightDiagonal(board, value));
 }
 
 function checkTieCondition(board){
-    for(let i = 0; i < board.length; ++i){
-        for(let j = 0; j < board.length; ++j){
+    let length = board.length;
+    for(let i = 0; i < length; ++i){
+        for(let j = 0; j < length; ++j){
             if(board[i][j] === null){
                 return false;
             }
@@ -23,55 +24,60 @@ function checkTieCondition(board){
     return true;
 }
 
-function getRowCount(board, cell, value){
-    let row = cell[0];
-    let count = 0;
+function checkRows(board, value){
+    let length = board.length;
 
-    for(let i = 0; i < board.length; ++i){
-        if(board[row][i] === value){
-            count++;
+    for(let i = 0; i < length; ++i){
+        let count = 0;
+        for(let j = 0; j < length; ++j){
+            if(board[i][j] === value) count++;
         }
+
+        if(count === length) return true;
     }
 
-    return count;
+    return false;
 }
 
-function getColumnCount(board, cell, value){
-    let col = cell[1];
-    let count = 0;
+function checkColumns(board, value){
+    let length = board.length;
 
-    for(let i = 0; i < board.length; ++i){
-        if(board[i][col] === value){
-            count++;
+    for(let i = 0; i < length; ++i){
+        let count = 0;
+        for(let j = 0; j < length; ++j){
+            if(board[j][i] === value) count++;
         }
+
+        if(count === length) return true;
     }
 
-    return count;
+    return false;
 }
 
-function getLeftDiagonalCount(board, value){
+function checkLeftDiagonal(board, value){
     let count = 0;
+    let length = board.length;
 
-    for(let i = 0; i < board.length; i++){
+    for(let i = 0; i < length; i++){
         if(board[i][i] === value){
             count++;
         }
     }
 
-    return count;
+    return count === length;
 }
 
-function getRightDiagonalCount(board, value){
+function checkRightDiagonal(board, value){
     let count = 0;
+    let length = board.length;
 
-    for(let i = 0; i < board.length; i++){
-        if(board[i][board.length - 1 - i] === value){
+    for(let i = 0; i < length; i++){
+        if(board[i][length - 1 - i] === value){
             count++;
         }
     }
 
-    return count;
+    return count === length;
 }
-
 
 export {isMoveValid, checkWinCondition, checkTieCondition};

@@ -1,22 +1,25 @@
 
-const board = [];
+let board = null;
 
 function createBoard(boardSize){
+    board = [];
     for(let i = 0; i < boardSize; ++i){
         board[i] = [];
         for(let j = 0; j < boardSize; ++j){
             board[i][j] = null;
         }
     }
-    
-    return board;
+}
+
+function resetBoard(){
+    board = null;
 }
 
 function getBoard(){
     return board;
 }
 
-function displayBoard(){
+function displayBoard(board){
     let boardOutput = "";
     for(let i = 0; i < board.length; ++i){
         for(let j = 0; j < board[i].length; ++j){
@@ -36,4 +39,4 @@ function setCellValue(cell, value){
     board[cell[0]][cell[1]] = value;
 }
 
-export {createBoard, displayBoard, setCellValue, getBoard};
+export {createBoard, resetBoard, getBoard, displayBoard, setCellValue};
