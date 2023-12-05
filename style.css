@@ -27,6 +27,11 @@
 .header {
     background-color: var(--header_bgc);
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    letter-spacing: 4px;
 }
 
 .main {
@@ -46,6 +51,9 @@
 .footer {
     background-color: var(--footer_bg);
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .game-ui {
