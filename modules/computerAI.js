@@ -2,22 +2,19 @@ import * as gameBoard from "./gameBoard.js";
 import * as gameCharacters from "./gameCharacters.js";
 import * as gameLogic from "./gameLogic.js";
 
-let mode = easyMode;
+const modes = {
+    currMode: easyMode,
+    easy: easyMode,
+    medium: mediumMode,
+    hard: hardMode,
+};
 
-function getMode(){
-    return mode;
+function getCurrentMode(){
+    return modes.currMode;
 }
 
-function changeMode(modeFactor){
-    if(modeFactor == 1){
-        mode = easyMode;
-    }
-    else if(modeFactor == 2){
-        mode = mediumMode;
-    }
-    else{
-        mode = hardMode;
-    }
+function changeMode(mode){
+    modes.currMode = modes[mode];
 }
 
 function easyMode(){
@@ -122,4 +119,4 @@ function minimax(board, isMaximizingPlayer, user, computer) {
     }
 }
 
-export {getMode, changeMode};
+export {getCurrentMode, changeMode};

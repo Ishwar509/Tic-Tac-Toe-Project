@@ -8,7 +8,7 @@ let computer = null;
 
 function createNewPlayers() {
     user = createPlayer('User', userSymbol, null);
-    computer = createPlayer('Computer', computerSymbol, computerAI.getMode());
+    computer = createPlayer('Computer', computerSymbol, computerAI.getCurrentMode());
 
     return {user, computer};
 }

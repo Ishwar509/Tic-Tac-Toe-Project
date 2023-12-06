@@ -31,27 +31,17 @@ function gameButtonAction(e){
         let players = gameCharacters.createNewPlayers();
         gameController.playGame(players.user, players.computer);
     }
-
-    if(element.classList.contains("symbol")){
+    else if(element.classList.contains("symbol")){
         let previousSelection = document.querySelector('.symbol.selected');
         previousSelection.classList.remove("selected");
         element.classList.add("selected");
         gameCharacters.changeSymbol(element.textContent);
     }
-
-    if(element.classList.contains("mode")){
+    else if(element.classList.contains("mode")){
         let previousMode = document.querySelector('.mode.selected');
         previousMode.classList.remove("selected");
         element.classList.add("selected");
-        if(element.classList.contains("easy")){
-            computerAI.changeMode(1);
-        }
-        else if(element.classList.contains("medium")){
-            computerAI.changeMode(2);
-        }
-        else{
-            computerAI.changeMode(3);
-        }
+        computerAI.changeMode(element.dataset.mode);
     }
 }
 
